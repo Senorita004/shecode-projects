@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dear Diary</title>
+    <style>
+      h1 {
+        font-size: 50px;
+        text-align: center;
+        margin: 10px 10px;
+        box-shadow: 2px 3px 18px rgb(140, 100, 178);
+      }
+      h2 {
+        margin-bottom: 5px;
+        text-align: center;
+      }
+      .endQuote {
+        text-align: center;
+      }
+      .intro {
+        text-align: center;
+        line-height: 2;
+      }
+      img {
+        display: block;
+        margin: auto;
+      }
+      .goalList {
+        display: flex;
+        justify-content: center;
+      }
+      button {
+        color: rgb(55, 52, 52);
+        background: linear-gradient(
+          to right,
+          rgb(181, 145, 214),
+          rgb(232, 181, 198)
+        );
+        padding: 10px;
+        font-weight: 600;
+        border-radius: 50px;
+        border: none;
+        display: block;
+        margin: auto;
+      }
+
+      body {
+        background-color: #564d53;
+        transition: background-color 2s ease;
+      }
+
+      body:hover {
+        background-color: #dfe5ea;
+      }
+      .passwordHint {
+        text-align: center;
+        margin-top: 1px;
+        font-size: x-small;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>
+      <span style="color: blueviolet">Dear</span>
+      <span class="welcomeName" style="color: palevioletred">Diary</span>
+    </h1>
+
+    <div class="intro">
+      <p>
+        Today is a fresh start; A new chance to focus, grow, and move closer to
+        my goals. No matter how small the steps, progress is progress and I have
+        everything it takes to make today meaningful.
+        <br />
+      </p>
+    </div>
+
+    <img
+      src="https://icehrm.com/blog/content/images/2024/01/motivational-composition-goal-achievement.jpg"
+      width="300"
+      alt="progress in motion"
+    />
+
+    <h2>Goals for the day</h2>
+    <hr />
+    <div class="goalList">
+      <ul>
+        <li>Pick out a new book for book club</li>
+        <li>walk 10000 steps</li>
+        <li>Study tonight</li>
+        <li>Register for the gym</li>
+      </ul>
+    </div>
+
+    <p class="endQuote">
+      <strong>IMPORTANT!!!-----</strong>
+      <em>
+        Role Model of the day is
+        <a href="https://en.wikipedia.org/wiki/Michelle_Obama" target="_blank"
+          >Michelle Obama</a
+        >
+      </em>
+    </p>
+
+    <br />
+
+    <button>Click Me</button>
+    <p class="passwordHint"><em>hint: password is 123</em></p>
+  </body>
+
+  <script>
+    function signUserIn() {
+      let password = prompt("what's the password?");
+      console.log(password);
+      console.log(typeof password);
+      if (Number(password) === 123) {
+        let username = prompt("What is your name?");
+        return username;
+      } else {
+        return "Unverified User";
+      }
+    }
+
+    function signIn() {
+      let username = signUserIn();
+      let welcomeName = document.querySelector(".welcomeName");
+      welcomeName.innerText = username;
+    }
+
+    let button = document.querySelector("button");
+    button.addEventListener("click", signIn);
+  </script>
+</html>
